@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "AI 求职打招呼助手",
+  "version": "1.0",
+  "description": "在招聘网站抓取 JD，结合简历亮点用 AI 生成打招呼语并复制",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.zhipin.com/*", "*://*.lagou.com/*", "*://*.linkedin.com/*", "*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
