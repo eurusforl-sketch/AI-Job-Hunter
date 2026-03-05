@@ -1,6 +1,34 @@
-node_modules/
-bower_components/
-*.log
+# 环境变量与密钥（勿提交）
+.env
+.env.*
+!.env.example
 
-build/
-dist/
+# Mac 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 备份文件
+*.bak
+*.backup
+*~
+*.swp
+*.swo
+*.orig
+*-backup
+*-backup.*
+*.tmp
+*.temp
+backup/
+backups/
+
+# 本地测试脚本
+test/
+tests/
+**/test-*.js
+**/*.test.js
+**/*.spec.js
+**/local*.js
+**/debug*.js
+scratch/
+local/

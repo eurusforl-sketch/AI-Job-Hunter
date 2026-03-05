@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 求职打招呼助手</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AI 求职打招呼助手</h1>
+
+    <section class="section">
+      <label for="apiKey">API Key</label>
+      <input type="password" id="apiKey" placeholder="请输入 API Key" autocomplete="off" />
+    </section>
+
+    <section class="section">
+      <label for="apiType">AI 接口</label>
+      <select id="apiType">
+        <option value="openai">OpenAI 兼容</option>
+        <option value="gemini">Gemini 兼容</option>
+      </select>
+    </section>
+
+    <section class="section">
+      <label>上传简历</label>
+      <div class="resume-upload-line">
+        <label for="resumeFile" class="resume-file-btn">选择文件</label>
+        <input type="file" id="resumeFile" accept=".txt,.pdf" aria-label="上传简历" class="resume-file-hidden" />
+        <span id="resumeFileName" class="resume-filename">未选择任何文件</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <label for="style">话术风格</label>
+      <select id="style">
+        <option value="诚恳型">诚恳型</option>
+        <option value="活泼型">活泼型</option>
+        <option value="数据型">数据型</option>
+      </select>
+    </section>
+
+    <div class="actions">
+      <button type="button" id="btnGenerate" class="btn-primary">一键生成打招呼并复制</button>
+    </div>
+
+    <div id="status-msg" class="status-msg" role="status" aria-live="polite"></div>
+    <div id="message" class="message" role="alert" aria-live="polite"></div>
+  </div>
+  <script src="libs/pdf.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
